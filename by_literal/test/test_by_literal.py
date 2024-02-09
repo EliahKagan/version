@@ -1,5 +1,6 @@
 """Tests for the :mod:`by_literal` package."""
 
+import subprocess
 import sys
 
 import pytest
@@ -14,10 +15,15 @@ else:
 _EXPECTED_VERSION = "0.1.0"
 
 
-def test_hello(capsys: pytest.CaptureFixture) -> None:
+def test_hello_function(capsys: pytest.CaptureFixture) -> None:
     by_literal.hello()
     captured = capsys.readouterr()
     assert captured.out == "Hello, world!\n"
+
+
+def test_hello_command() -> None:
+    proc = subprocess.run("hello", capture_output=True, check=True, text=True)
+    assert proc.stdout == "Hello, world!\n"
 
 
 def test_version_attribute() -> None:
