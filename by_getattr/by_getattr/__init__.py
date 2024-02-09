@@ -1,9 +1,12 @@
 """Package that gets its :attr:`__version__` dynamically with :func:`__getattr__`."""
 
 import sys
+from typing import Literal, TYPE_CHECKING
+
+__version__: str
 
 
-def __getattr__(name: str) -> str:
+def _getattr(name: Literal["__version__"]) -> str:
     if name != "__version__":
         raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
@@ -13,6 +16,10 @@ def __getattr__(name: str) -> str:
         from importlib_metadata import version
 
     return version(__name__)
+
+
+if not TYPE_CHECKING:
+    __getattr__ = _getattr
 
 
 def hello() -> None:
