@@ -1,0 +1,8 @@
+# Cached Python bytecode
+__pycache__/
+
+# Python virtual environments
+.venv/
+
+# Build files
+*.egg-info/
