@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "by_literal"
 dynamic = ["version"]
 authors = [
-    {name = "Eliah Kagan", email = "degeneracypressure@gmail.com"}
+    {name = "Eliah Kagan", email = "degeneracypressure@gmail.com"},
 ]
 description = "Package that gets its __version__ by defining it in code"
 readme = "README.md"
@@ -24,6 +24,7 @@ lint = [
     "ruff >=0.2,<1",
 ]
 typecheck = [
+    "by_literal[test]",
     "mypy >=1,<2",
     "pyright >=1,<2",
 ]
