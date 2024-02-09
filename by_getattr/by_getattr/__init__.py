@@ -1,7 +1,12 @@
 """Package that gets its :attr:`__version__` dynamically with :func:`__getattr__`."""
 
 import sys
-from typing import Literal, TYPE_CHECKING
+from typing import TYPE_CHECKING
+
+if sys.version_info >= (3, 8):
+    from typing import Literal
+else:
+    from typing_extensions import Literal
 
 __version__: str
 
