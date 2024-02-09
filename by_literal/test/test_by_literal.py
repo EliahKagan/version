@@ -39,3 +39,11 @@ def test_version_attribute() -> None:
 def test_version_metadata() -> None:
     actual_version = _version(by_literal.__name__)
     assert actual_version == _EXPECTED_VERSION
+
+
+def test_nonexistent_attribute() -> None:
+    with pytest.raises(
+        AttributeError,
+        match=r"\Amodule 'by_literal' has no attribute 'nonexistent'\Z",
+    ):
+        by_literal.nonexistent  # type: ignore[attr-defined]

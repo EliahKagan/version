@@ -39,3 +39,11 @@ def test_version_attribute() -> None:
 def test_version_metadata() -> None:
     actual_version = _version(by_getattr.__name__)
     assert actual_version == _EXPECTED_VERSION
+
+
+def test_nonexistent_attribute() -> None:
+    with pytest.raises(
+        AttributeError,
+        match=r"\Amodule 'by_getattr' has no attribute 'nonexistent'\Z",
+    ):
+        by_getattr.nonexistent  # type: ignore[attr-defined]
