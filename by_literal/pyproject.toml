@@ -40,4 +40,4 @@ version = {attr = "by_literal.__version__"}
 
 [tool.ruff.lint]
 extend-select = ["E", "F", "W", "I", "S"]
-ignore = ["S101"]
+ignore = ["S101", "S603"]

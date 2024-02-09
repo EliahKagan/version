@@ -22,8 +22,13 @@ def test_hello_function(capsys: pytest.CaptureFixture) -> None:
 
 
 def test_hello_command() -> None:
-    proc = subprocess.run("hello", capture_output=True, check=True, text=True)
-    assert proc.stdout == "Hello, world!\n"
+    process = subprocess.run(
+        "hello",  # noqa: S607  # OK in tests, would be insecure in general.
+        capture_output=True,
+        check=True,
+        text=True,
+    )
+    assert process.stdout == "Hello, world!\n"
 
 
 def test_version_attribute() -> None:
