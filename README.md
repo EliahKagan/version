@@ -44,13 +44,7 @@ Then, at the top of this repository's working tree (the directory that contains
 
 ```sh
 tox --root by_literal
-```
-
-```sh
 tox --root by_getattr
-```
-
-```sh
 tox --root by_property
 ```
 
