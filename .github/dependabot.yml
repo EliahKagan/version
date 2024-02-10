@@ -1,7 +1,21 @@
 version: 2
 updates:
 - package-ecosystem: pip
-  directory: '/'
+  directory: '/by_literal'
+  schedule:
+    interval: monthly
+  allow:
+  - dependency-type: all
+
+- package-ecosystem: pip
+  directory: '/by_getattr'
+  schedule:
+    interval: monthly
+  allow:
+  - dependency-type: all
+
+- package-ecosystem: pip
+  directory: '/by_property'
   schedule:
     interval: monthly
   allow:
