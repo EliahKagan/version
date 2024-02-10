@@ -19,12 +19,14 @@ package in `pyproject.toml` and using `setuptools` as a build backend.
 - [**`by_literal/`**](by_literal/) - Set the value of `__version__` in the
   package's top-level `__init__.py`, and have the build backend [parse it
   out](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata).
+
 - [**`by_getattr/`**](by_getattr/) - Define `__getattr__` in the package's
   top-level `__init__.py` that [dynamically retrieves version
   metadata](https://docs.python.org/3/library/importlib.metadata.html#distribution-versions)
   on demand when `__version__` is accessed. (This requires some extra work to
   get precise type hinting, since `mypy` rejects `Literal["__version__"]` as a
   parameter type annotation for module-level `__getattr__`.)
+
 - [**`by_property/`**](by_property/) - Create a subclass of `ModuleType` with a
   `__version__` *property* that [dynamically retrieves version
   metadata](https://docs.python.org/3/library/importlib.metadata.html#distribution-versions)
@@ -44,9 +46,11 @@ follows:
 ```sh
 tox --root by_literal
 ```
+
 ```sh
 tox --root by_getattr
 ```
+
 ```sh
 tox --root by_property
 ```
