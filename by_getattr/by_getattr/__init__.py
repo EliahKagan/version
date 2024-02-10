@@ -1,7 +1,7 @@
 """Package that gets its :attr:`__version__` dynamically with :func:`__getattr__`."""
 
 import sys
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List
 
 if sys.version_info >= (3, 8):
     from typing import Literal
@@ -27,7 +27,7 @@ if not TYPE_CHECKING:
     __getattr__ = _getattr
 
 
-def __dir__() -> list[str]:
+def __dir__() -> List[str]:
     return [*globals(), "__version__"]
 
 

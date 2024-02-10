@@ -2,12 +2,13 @@
 
 import sys
 import types
+from typing import List
 
 
 class _ModuleWithVersion(types.ModuleType):
     """Module whose :attr:`__version__` is obtained from dynamic metadata."""
 
-    def __dir__(self) -> list[str]:
+    def __dir__(self) -> List[str]:
         return [*super().__dir__(), "__version__"]
 
     @property
