@@ -47,3 +47,16 @@ def test_nonexistent_attribute() -> None:
         match=r"\Amodule 'by_property' has no attribute 'nonexistent'\Z",
     ):
         by_property.nonexistent  # type: ignore[attr-defined]
+
+
+def test_dir_lists_common_dunders() -> None:
+    common = {'__doc__', '__loader__', '__name__', '__package__', '__spec__'}
+    assert common <= set(dir(by_property))
+
+
+def test_dir_lists_hello_attribute() -> None:
+    assert "hello" in dir(by_property)
+
+
+def test_dir_lists_version_attribute() -> None:
+    assert "__version__" in dir(by_property)
