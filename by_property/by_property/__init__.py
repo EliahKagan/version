@@ -7,6 +7,9 @@ import types
 class _ModuleWithVersion(types.ModuleType):
     """Module whose :attr:`__version__` is obtained from dynamic metadata."""
 
+    def __dir__(self) -> list[str]:
+        return [*super().__dir__(), "__version__"]
+
     @property
     def __version__(self) -> str:
         if sys.version_info >= (3, 8):

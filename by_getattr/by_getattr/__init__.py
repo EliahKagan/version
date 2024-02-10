@@ -27,6 +27,10 @@ if not TYPE_CHECKING:
     __getattr__ = _getattr
 
 
+def __dir__() -> list[str]:
+    return [*globals(), "__version__"]
+
+
 def hello() -> None:
     """Print a simple greeting."""
     print("Hello, world!")
