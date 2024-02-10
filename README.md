@@ -39,9 +39,8 @@ Checks can be run together with [`tox`](https://tox.wiki/).
 To do so, install `tox` if it is not already installed. Make sure you have
 version 4 or higher.
 
-Then, at the top of this repository's working tree (the direcctory that
-contains `tox.ini`), test and typecheck any of the individual packages as
-follows:
+Then, at the top of this repository's working tree (the directory that contains
+`tox.ini`), test and typecheck any of the individual packages as follows:
 
 ```sh
 tox --root by_literal
@@ -54,6 +53,10 @@ tox --root by_getattr
 ```sh
 tox --root by_property
 ```
+
+These `tox` checks also all
+[run on CI](https://github.com/EliahKagan/version/actions/workflows/tox.yml).
+See [`tox.yml`](.github/workflows/tox.yml).
 
 ## Further reading
 
