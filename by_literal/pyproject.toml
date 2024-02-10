@@ -30,7 +30,9 @@ typecheck = [
     "pyright >=1, <2",
 ]
 dev = [
-    "by_literal[test,lint,typecheck]",
+    "by_literal[test]",
+    "by_literal[lint]",
+    "by_literal[typecheck]",
 ]
 
 [project.scripts]

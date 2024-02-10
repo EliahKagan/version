@@ -32,7 +32,9 @@ typecheck = [
     "pyright >=1, <2",
 ]
 dev = [
-    "by_getattr[test,lint,typecheck]",
+    "by_getattr[test]",
+    "by_getattr[lint]",
+    "by_getattr[typecheck]",
 ]
 
 [project.scripts]

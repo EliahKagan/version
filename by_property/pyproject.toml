@@ -31,7 +31,9 @@ typecheck = [
     "pyright >=1, <2",
 ]
 dev = [
-    "by_property[test,lint,typecheck]",
+    "by_property[test]",
+    "by_property[lint]",
+    "by_property[typecheck]",
 ]
 
 [project.scripts]
