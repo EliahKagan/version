@@ -49,8 +49,6 @@ jobs:
         - python-version: '3.14'
           experimental: true
 
-      fail-fast: false
-
     runs-on: ${{ matrix.os }}
 
     defaults:
@@ -75,3 +73,18 @@ jobs:
 
     - name: Check with tox
       run: tox --root ${{ matrix.package }}
+
+  all-pass:
+    name: All tox checks pass
+
+    needs: [tox]
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Some failed
+      if: contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'failure')
+      run: false
+
+    - name: All passed
+      run: true
