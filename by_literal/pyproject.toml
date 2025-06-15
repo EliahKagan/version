@@ -11,11 +11,10 @@ authors = [
 description = "Package that gets its __version__ by defining it in code"
 readme = "README.md"
 requires-python = ">= 3.7"
-license = "0BSD"
+license = {file = "LICENSE"}
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Zero-Clause BSD (0BSD)",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Typing :: Typed",
