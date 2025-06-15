@@ -6,6 +6,9 @@ updates:
     interval: monthly
   allow:
   - dependency-type: all
+  groups:
+    by_literal:
+      patterns: ['*']
 
 - package-ecosystem: pip
   directory: '/by_getattr'
@@ -13,6 +16,9 @@ updates:
     interval: monthly
   allow:
   - dependency-type: all
+  groups:
+    by_getattr:
+      patterns: ['*']
 
 - package-ecosystem: pip
   directory: '/by_property'
@@ -20,8 +26,14 @@ updates:
     interval: monthly
   allow:
   - dependency-type: all
+  groups:
+    by_property:
+      patterns: ['*']
 
 - package-ecosystem: github-actions
   directory: '/'
   schedule:
     interval: daily
+  groups:
+    actions:
+      patterns: ['*']
