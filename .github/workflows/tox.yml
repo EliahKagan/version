@@ -14,7 +14,7 @@ jobs:
         os:
         - ubuntu-22.04  # For Python 3.7 only (unavailable on >= 24.04).
         - ubuntu-latest
-        - macos-13  # These images are x86-64 (amd64).
+        - macos-15-intel  # These images are x86-64 (amd64).
         - macos-15  # These images are Apple Silicon (aarch64, amd64).
         - windows-latest
 
@@ -46,8 +46,8 @@ jobs:
         include:
         - experimental: false
 
-        - python-version: '3.14'
-          experimental: true
+        # - python-version: '3.14'
+        #   experimental: true
 
     runs-on: ${{ matrix.os }}
 
