@@ -46,7 +46,7 @@ def test_nonexistent_attribute() -> None:
         AttributeError,
         match=r"\Amodule 'by_getattr' has no attribute 'nonexistent'\Z",
     ):
-        by_getattr.nonexistent  # type: ignore[attr-defined]
+        _ = by_getattr.nonexistent  # type: ignore[attr-defined]
 
 
 def test_dir_lists_common_dunders() -> None:
