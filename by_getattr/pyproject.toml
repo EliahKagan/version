@@ -47,5 +47,14 @@ dev = [
 hello = "by_getattr:hello"
 
 [tool.ruff.lint]
-extend-select = ["E", "F", "W", "I", "S"]
-ignore = ["S101", "S603"]
+extend-select = [
+    "E",  # pycodestyle errors
+    "F",  # Pyflakes
+    "W",  # pycodestyle warnings
+    "I",  # isort
+    "S",  # flake8-bandit
+]
+ignore = [
+    "S101",  # assert
+    "S603",  # subprocess-without-shell-equals-true
+]
