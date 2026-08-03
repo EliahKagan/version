@@ -46,7 +46,7 @@ def test_nonexistent_attribute() -> None:
         AttributeError,
         match=r"\Amodule 'by_property' has no attribute 'nonexistent'\Z",
     ):
-        by_property.nonexistent  # type: ignore[attr-defined]
+        _ = by_property.nonexistent  # type: ignore[attr-defined]
 
 
 def test_dir_lists_common_dunders() -> None:
