@@ -54,6 +54,7 @@ extend-select = [
     "S",  # flake8-bandit
 ]
 ignore = [
+    "FA100",  # future-rewritable-type-annotation
     "S101",  # assert
     "S603",  # subprocess-without-shell-equals-true
 ]
