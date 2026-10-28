@@ -13,6 +13,7 @@ jobs:
 
         os:
         - ubuntu-22.04  # For Python 3.7 only (unavailable on >= 24.04).
+        - ubuntu-24.04  # For Python 3.8 and 3.9 only (unavailable on >= 26.04).
         - ubuntu-latest
         - macos-15-intel  # These images are x86-64 (amd64).
         - macos-15  # These images are Apple Silicon (aarch64, arm64).
@@ -37,11 +38,31 @@ jobs:
         - os: ubuntu-22.04
           python-version: '3.14'
 
+        # Use Ubuntu 24.04 only to test Python 3.8 and 3.9, and no other Pythons.
+        - os: ubuntu-24.04
+          python-version: '3.7'
+        - os: ubuntu-24.04
+          python-version: '3.10'
+        - os: ubuntu-24.04
+          python-version: '3.11'
+        - os: ubuntu-24.04
+          python-version: '3.12'
+        - os: ubuntu-24.04
+          python-version: '3.13'
+        - os: ubuntu-24.04
+          python-version: '3.14'
+
         # Python 3.7 is not available on some newer systems.
         - os: ubuntu-latest
           python-version: '3.7'
         - os: macos-15
           python-version: '3.7'
+
+        # Python 3.8 and 3.9 are not available on some newer systems.
+        - os: ubuntu-latest
+          python-version: '3.8'
+        - os: ubuntu-latest
+          python-version: '3.9'
 
         include:
         - experimental: false
